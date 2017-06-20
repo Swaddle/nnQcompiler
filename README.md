@@ -1,11 +1,11 @@
 # nnQcompiler
 Neural network to generate quantum circuits in SU(8)
 
-# Requirements
+## Requirements
 keras 2.0, TensorFlow-GPU, h5py. Mathematica was used to generate the training data. Training data is provided.
 
 
-# Installation 
+## Installation 
 
 keras and tensorflow-gpu can be installed with python pip.
 ```
@@ -20,7 +20,7 @@ $ cat .keras\keras.json | grep backend
 "backend":"tensorflow",
 ```
 
-# Usage
+## Usage
 
 Ensure there is a `data_training.csv` and a `data_valid.csv` file in the current working directory. 
 
@@ -41,6 +41,9 @@ $ python train.py
 This produces a `quant_model.h5` file which contains the trained model. This can be run on unseen data 
 with the `predict.py` script. 
 
+## Shooting Method
+
+Solving the geodesic equations for a specific U would more traditionally require a shooting method. For interest, `shooting.nb` contains a Mathematica implemenation. Solving the problem with this approach will take several hours.
 
 
 
