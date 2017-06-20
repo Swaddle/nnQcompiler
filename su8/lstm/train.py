@@ -4,8 +4,6 @@ from data_utils import load_data
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers.recurrent import GRU
-from keras.layers.convolutional import Conv1D
-from keras.layers.convolutional import ZeroPadding1D
 from keras.callbacks import CSVLogger
 from numpy import array
 from tensorflow.python.ops import control_flow_ops
@@ -16,6 +14,8 @@ import tensorflow as tf
 training_data_path = 'data_training.csv'
 valid_data_path = 'data_valid.csv'
 
+
+# custom objective - unscaled Euclidean norm
 def custom_objective(y_true, y_pred):
     tensor = y_true - y_pred 
     squares = tf.square(tensor)
